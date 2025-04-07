@@ -318,7 +318,7 @@ const PodcastRecommender = () => {
                   ) : (
                     <div className={`text-center py-16 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                       <Headphones className="w-16 h-16 mx-auto mb-4 opacity-30" />
-                      <p className="text-lg">Start a conversation to get podcast recommendations tailored to your mood!</p>
+                      <p className="text-lg">Start a conversation to get podcast recommendations tailored to your mood! <br /> <br /> <small className='bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-3 rounded-full border-purple-500 border-0'>⚡Made By Ayush Swami (12311389) and Aakash Kumar (12311105)⚡ </small> </p>
                     </div>
                   )}
                 </div>
