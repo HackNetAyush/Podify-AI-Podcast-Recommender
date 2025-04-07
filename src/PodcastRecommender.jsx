@@ -182,7 +182,7 @@ const PodcastRecommender = () => {
         </header>
         
         {/* Main container with tabs */}
-        <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+        <div className="flex-1 flex flex-col md:flex-row overflow-auto">
           {/* Chat section */}
           <AnimatePresence mode="wait">
             {(showChat || window.innerWidth >= 768) && (
@@ -266,7 +266,7 @@ const PodcastRecommender = () => {
                 </div>
                 
                 {/* Message input */}
-                <div className={`${themeClasses.header} border-t p-4 transition-colors duration-300`}>
+                <div className={`${themeClasses.header} sticky bottom-0 border-t p-4 transition-colors duration-300`}>
                   <form onSubmit={handleSubmit} className="max-w-3xl mx-auto">
                     <div className="relative">
                       <input
