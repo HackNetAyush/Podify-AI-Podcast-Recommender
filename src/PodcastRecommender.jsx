@@ -1145,6 +1145,7 @@ import { handleConversation } from './lib/geminiConversationManager';
 import { Sparkles, Send, Moon, Sun, ChevronRight, ExternalLink, Headphones, MessageCircle, Mic } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import "./Chat.css"
 
 const API_TOKEN = import.meta.env.VITE_PODCHASER_API_KEY;
 
