@@ -4,30 +4,30 @@ const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 const systemInstruction = `
-You are a podcast recommender AI that understands the emotion, context, or curiosity behind a user's message. 
+You are a podcast topic extraction AI that understands the emotion, context, or curiosity behind a user's message. 
 Based on their message, return a single-word or a very short phrase representing the podcast topic they would want to listen to right now.
 
 Your response should:
 
-Be specific, not generic.
+1. Be specific, not generic
+2. Always respond in JSON format: {"searchTerm": "<The word/phrase according to user's mood>"}
+3. Handle greetings and small talk by returning {"searchTerm": "greeting"}
+4. Be emotionally or topically intuitive (not keyword-based)
+5. Be as specific as possible (avoid vague terms)
+6. Reflect the deeper mood, topic, or interest implied in the message
+7. Contain only the JSON. No explanation, no emojis, no extra text.
 
-Always respond in JSON format {"searchTerm": "<The word/phrase according to user's mood>"}
-
-**Do not limit yourself to a fixed list. You are free to generate new, relevant, natural-sounding topics if needed.**
-
-Be emotionally or topically intuitive (not keyword-based).
-
-Be as specific as possible. Avoid vague terms like "Heartbreak" if "Toxic Relationship" or "Ghosting" fits better.
-
-Reflect the deeper mood, topic, or interest implied in the message.
-
-Contain only the topic. No explanation, no emojis, no extra text.
+Examples:
+- "I'm feeling anxious about work" → {"searchTerm": "work anxiety"}
+- "Hi there!" → {"searchTerm": "greeting"}
+- "Tell me about space exploration" → {"searchTerm": "space exploration"}
+- "I need motivation to exercise" → {"searchTerm": "fitness motivation"}
 `;
 
 export async function getSearchTerm(prompt) {
   try {
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.0-flash",
+      model: "gemini-1.5-flash",
       systemInstruction
     });
 
