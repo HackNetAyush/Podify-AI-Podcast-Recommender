@@ -1145,7 +1145,7 @@ import { handleConversation } from './lib/geminiConversationManager';
 import { Sparkles, Send, Moon, Sun, ChevronRight, ExternalLink, Headphones, MessageCircle, Mic } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
-import "./Chat.css"
+import styles from './Chat.module.css';
 
 const API_TOKEN = import.meta.env.VITE_PODCHASER_API_KEY;
 
@@ -1472,7 +1472,7 @@ const PodcastRecommender = () => {
   };
 
   return (
-    <div className={`flex h-screen ${themeClasses.app} transition-colors duration-300`}>
+    <div className={`flex h-screen ${themeClasses.app} transition-colors duration-300 `}>
       <div className="flex-1 flex flex-col overflow-hidden">
         <header className={`${themeClasses.header} border-b shadow-sm py-3 px-6 flex items-center justify-between transition-colors duration-300`}>
           <div className="flex items-center">
@@ -1511,7 +1511,7 @@ const PodcastRecommender = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className={`flex-1 flex flex-col ${!showChat && window.innerWidth < 768 ? 'hidden' : ''}`}
+                className={`flex-1 flex flex-col ${!showChat && window.innerWidth < 768 ? 'hidden' : ''} ${styles.styleWrapper}`}
               >
                 <div className="flex-1 overflow-y-auto p-4 sm:p-6">
                   <div className="max-w-3xl mx-auto">
