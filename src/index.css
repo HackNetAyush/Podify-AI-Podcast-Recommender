@@ -25,19 +25,6 @@ html, body, #root{
 
 
 
-strong, a{
-
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /* padding: 10px; */
-  color: #615fff;
-  text-decoration: underline;
-
-}
-
-
-
-
 /* 
 a {
   font-weight: 500;
