@@ -21,7 +21,7 @@ Respond STRICTLY in this JSON format:
 Guidelines:
 - Greetings: Any welcoming/small talk messages
 - More requests: Explicit or implicit requests for additional content
-- Search term: Specific topic derived from the message (null if not applicable)
+- Search term: Specific topic derived from the message (null if not applicable) (max 2-3 words only)
 - Needs clarification: When the message is unclear or ambiguous
 - If the topic is different from the previous one's then return searchTerm instead of isMoreRequest (Important)
 
